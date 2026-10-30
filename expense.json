@@ -1,0 +1,8 @@
+{
+    "expenses": [
+        {
+            "desc": "shouldWork",
+            "amount": 3444.0
+        }
+    ]
+}

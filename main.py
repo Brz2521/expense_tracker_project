@@ -1,6 +1,5 @@
 from argparse import ArgumentParser, Namespace
 from expense_tracker import add_cmd
-import pathlib
 
 parser = ArgumentParser(
     description="Track and manage expenses"
