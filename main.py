@@ -1,4 +1,5 @@
 from argparse import ArgumentParser, Namespace
+from expense_tracker import add_cmd
 import pathlib
 
 parser = ArgumentParser(
@@ -11,6 +12,7 @@ sub = parser.add_subparsers(dest="command", required=True)
 add_parser = sub.add_parser("add", help="Add an expense")
 add_parser.add_argument('--description', required=True, help="Expense description")
 add_parser.add_argument('--amount', type=float, required=True, help="Expense amount")
+
 
 # List command to view all expenses
 sub.add_parser("list", help="View all expenses")
@@ -33,19 +35,7 @@ summary_parser.add_argument("--month", type=int, help="Month number (1-12)")
 #Read the command line arguments
 args = parser.parse_args()
 
-#print(args)
+# Command Functions
 
-'''
-# Choosing a command (Test area)
-match args.command:
-    case "add":
-        print(f'Your desc is {args.description} and amount is {args.amount}')
-    case "update":
-        print("update expense")
-    case "delete":
-        print("Delete expense")
-    case "list":
-        print("view all, list command")
-    case "summary":
-        print("Summary of the expense")
-'''
+if args.command == "add":
+    add_cmd(args)
