@@ -1,20 +1,22 @@
 {
     "expenses": [
         {
-            "desc": "NewOne",
-            "amount": 333.0,
-            "id": 1
+            "id": 1,
+            "date": "2026-11-02",
+            "desc": "ThisIsHard",
+            "amount": 23555.0
         },
         {
             "id": 2,
-            "desc": "AnotherOne",
-            "amount": 365.0
+            "date": "2026-11-02",
+            "desc": "Hello",
+            "amount": 687.0
         },
         {
             "id": 3,
-            "date": "2026-10-30",
-            "desc": "ForDate",
-            "amount": 0.0
+            "date": "2026-11-02",
+            "desc": "WOW",
+            "amount": 2763.0
         }
     ]
 }

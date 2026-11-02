@@ -2,7 +2,7 @@ from email.policy import default
 import json
 from datetime import date, datetime
 
-# View all function
+# Load all data function
 def load_data():
     with open("expenses.json", "r") as file:
         data = json.load(file)
@@ -26,7 +26,51 @@ def add_cmd(args):
     with open("expenses.json", "w") as file:
         json.dump(data, file, indent=4)
 
-# Delete function
+# Update function
+def update_cmd(args):
+    data = load_data()
+
+    for expense in data["expenses"]:
+        if expense["id"] == args.id:
+
+            if args.description is not None:
+                expense["desc"] = args.description
+
+            if args.amount is not None:
+                expense["amount"] = args.amount
+
+            expense["date"] = date.today().isoformat()
+            
+            with open("expenses.json", "w") as file:
+                json.dump(data, file, indent=4)
+
+            print(f"Expense {args.id}, updated successfully")
+            return
+
+    print(f"Expense with ID {args.id} was not found")
+
+# Delete command
+def delete_cmd(args):
+    data = load_data()
+
+    for expense in data["expenses"]:
+
+        if expense["id"] == args.id:
+            data["expenses"].remove(expense)
+
+            with open("expenses.json", "w") as file:
+                json.dump(data, file, indent=4)
+
+            print(f'Expense {args.id} deleted successfully')
+            return
+
+    print(f"Expense with ID {args.id} was not found")
+
+
+
+
+
+
 
 
 
