@@ -22,7 +22,7 @@ File Handling — Reading, writing, and exporting data using JSON and CSV.
 
 Python Fundamentals — Applying functions, loops, dictionaries, lists, and conditional logic.
 
-⚙️ Application Features
+### ✨ Application Features
 
 Add Expense — add_cmd()
 
@@ -52,7 +52,7 @@ Export Expenses — export_cmd()
 
 Exports expense records into CSV files for use in spreadsheet applications.
 
-🛠️ Technologies Used
+### 🛠️ Technologies Used
 
 Python — Core programming language.
 
