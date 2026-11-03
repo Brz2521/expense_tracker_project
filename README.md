@@ -8,7 +8,7 @@ The application supports adding, updating, deleting, and viewing expenses, along
 
 Expense data is stored locally using JSON, ensuring information persists between sessions. The application uses Python's argparse module to handle commands and user input.
 
-## Project Focus 🖥️
+### Project Focus 🖥️
 
 CLI Development — Building a command-line interface using Python's argparse module.
 
