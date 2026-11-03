@@ -1,5 +1,5 @@
 from argparse import ArgumentParser, Namespace
-from expense_tracker import add_cmd, delete_cmd, update_cmd
+from expense_tracker import add_cmd, delete_cmd, update_cmd, list_cmd, summary_cmd
 
 parser = ArgumentParser(
     description="Track and manage expenses"
@@ -42,4 +42,8 @@ elif args.command == "update":
     update_cmd(args)
 elif args.command == "delete":
     delete_cmd(args)
+elif args.command == "list":
+    list_cmd(args)
+elif args.command == "summary":
+    summary_cmd(args)
 

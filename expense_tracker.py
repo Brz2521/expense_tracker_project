@@ -67,6 +67,55 @@ def delete_cmd(args):
     print(f"Expense with ID {args.id} was not found")
 
 
+# List command
+def list_cmd(args):
+    data = load_data()
+
+    if not data["expenses"]:
+        print("No expenses found")
+        return
+
+    print("ID | Date | Description | Amount")
+    print("-" * 50)
+
+    for expense in data["expenses"]:
+        print(
+            f'{expense["id"]} | '
+            f'{expense["date"]} | '
+            f'{expense["desc"]} | '
+            f'${expense["amount"]:.2f}'
+        )
+
+# Summary command
+def summary_cmd(args):
+    data = load_data()
+
+    if args.month is not None:
+        if not 1 <= args.month <= 12:
+            print("Month must be between 1 and 12")
+            return
+
+        total = sum(
+            expense["amount"]
+            for expense in data["expenses"]
+            if datetime.fromisoformat(expense["date"]).year == date.today().year
+            and datetime.fromisoformat(expense["date"]).month == args.month
+        )
+
+        print(f"Total expenses for month {args.month}: ${total:.2f}")
+
+    else:
+        total = sum(
+            expense["amount"]
+            for expense in data["expenses"]
+        )
+
+        print(f"Total expenses: ${total:.2f}")
+
+
+
+
+
 
 
 
