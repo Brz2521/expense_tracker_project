@@ -1,6 +1,6 @@
-#Expense Tracker CLI — Python Project#
+# Expense Tracker CLI — Python Project
 
-📌##Project Description##📌
+## 📌Project Description📌
 
 Expense Tracker CLI is a command-line application built with Python that allows users to manage, track, and organize personal expenses.
 
